@@ -1,4 +1,4 @@
-#Digital Logic Circuit Simulator
+# Digital Logic Circuit Simulator
 
 This repository contains a C++ program developed as an assignment for the "Programmieren 2" course in the Technical Computer Science program at the Augsburg University of Applied Sciences. The goal of the project is to learn and apply the concepts of object-oriented programming, multiple inheritance, and virtual functions, as well as the usage of the `vector` class to create variable storage for objects. The program is designed to simulate digital logic circuits, such as simple logic gates (AND, OR, XOR), half adders, and full adders.
 
