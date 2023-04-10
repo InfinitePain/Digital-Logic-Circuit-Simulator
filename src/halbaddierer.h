@@ -7,18 +7,33 @@
  ============================================================================
  */
 
-#include <iostream>
-#include <cstdlib>
-#include "baustein.h"
-#include "schnittstelle.h"
+#pragma once
 
-class Halbaddierer {
+
+#include "schaltung.h"
+#include "xor2.h"
+#include "und2.h"
+
+class Halbaddierer: public Schaltung {
 public:
 	Halbaddierer(Schnittstelle* e0, Schnittstelle* e1, Schnittstelle* a0, Schnittstelle* a1) {
-		// code
+		addEingang(e0);
+		addEingang(e1);
+		addAusgang(a0);
+		addAusgang(a1);
+
+		Xor2* xor2 = new Xor2(e0, e1, a0);
+		Und2* und2 = new Und2(e0, e1, a1);
+
+		bausteine.push_back(xor2);
+		bausteine.push_back(und2);
+
+		name = "Halbaddierer";
 	}
 
 	void update() {
-		// code
+		for (Baustein* b : bausteine) {
+			b->update();
+		}
 	}
 };
