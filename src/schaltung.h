@@ -7,16 +7,23 @@
  ============================================================================
  */
 
-#include <iostream>
-#include <cstdlib>
+#pragma once
+
 #include "schnittstelle.h"
 #include "baustein.h"
-#include "oder2.h"
-#include "und2.h"
-#include "xor2.h"
-#include "halbaddierer.h"
-#include "volladdierer.h"
+#include <vector>
 
-class Schaltung {
-	// Code for Schaltung class
+class Schaltung: public Baustein {
+protected:
+	std::vector<Baustein*> bausteine;
+	std::vector<Schnittstelle*> intern;
+public:
+	virtual ~Schaltung() {
+		for (Baustein* b : bausteine) {
+			delete b;
+		}
+		for (Schnittstelle* s : intern) {
+			delete s;
+		}
+	}
 };
