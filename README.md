@@ -45,11 +45,6 @@ To compile and run the program, follow these steps:
     ```
     ./digital_logic_circuit_simulator
     ```
-    
-
-## Usage
-
-When running the program, you can create instances of different digital logic circuit components, such as AND, OR, XOR gates, half adders, and full adders. You can connect these components to create more complex circuits and simulate their behavior.
 
 ## Contributing
 
