@@ -7,18 +7,29 @@
  ============================================================================
  */
 
-#include <iostream>
-#include <cstdlib>
-#include "baustein.h"
-#include "schnittstelle.h"
+#pragma once
 
-class Oder2 {
+#include "baustein.h"
+#include <vector>
+
+class Oder2: public Baustein {
 public:
 	Oder2(Schnittstelle* e0, Schnittstelle* e1, Schnittstelle* a0) {
-		// code
+		addEingang(e0);
+		addEingang(e1);
+		addAusgang(a0);
+		name = "Oder2";
 	}
 
 	void update() {
-		// code
+		short e0Pegel = eingaenge.at(0)->getPegel();
+		short e1Pegel = eingaenge.at(1)->getPegel();
+
+		if (e0Pegel == Schnittstelle::UNDEFINED || e1Pegel == Schnittstelle::UNDEFINED) {
+			ausgaenge.at(0)->setPegel(Schnittstelle::UNDEFINED);
+		}
+		else {
+			ausgaenge.at(0)->setPegel(e0Pegel | e1Pegel);
+		}
 	}
 };
