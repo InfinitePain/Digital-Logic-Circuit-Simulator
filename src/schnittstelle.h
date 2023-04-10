@@ -7,16 +7,28 @@
  ============================================================================
  */
 
-#include <iostream>
-#include <cstdlib>
+#pragma once
 
 class Schnittstelle {
+private:
+	short pegel; // HIGH, LOW, UNDEFINED
 public:
+	static const short HIGH = 1;
+    static const short LOW = 0;
+	static const short UNDEFINED = -1;
+
+	Schnittstelle(): pegel(LOW) {}
+	
 	short getPegel() {
-		// code
+		return pegel;
 	}
 
 	bool setPegel(short pegel) {
-		// code
+		if (pegel == HIGH || pegel == LOW) {
+			this->pegel = pegel;
+			return true;
+		}
+		this->pegel = UNDEFINED;
+		return false;
 	}
 };
