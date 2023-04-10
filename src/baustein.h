@@ -7,28 +7,38 @@
  ============================================================================
  */
 
-#include <iostream>
-#include <cstdlib>
-#include "schnittstelle.h"
+#pragma once
 
+#include "schnittstelle.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
 class Baustein {
 protected:
-	// Attributes
+	std::string name;
+	std::vector<Schnittstelle*> eingaenge;
+	std::vector<Schnittstelle*> ausgaenge;
 
 public:
 	void addEingang(Schnittstelle* schnittstelle) {
-		// code
+		eingaenge.push_back(schnittstelle);
 	}
 
 	void addAusgang(Schnittstelle* schnittstelle) {
-		// code
+		ausgaenge.push_back(schnittstelle);
 	}
 
 	virtual void print() {
-		// code
+		std::cout << "Baustein: " << name << std::endl;
+		for (int i = 0; i < eingaenge.size(); i++) {
+			std::cout << "Eingang " << i << ": " << "Pegel = " << eingaenge.at(i)->getPegel() << std::endl;
+		}
+		for (int i = 0; i < ausgaenge.size(); i++) {
+			std::cout << "Ausgang " << i << ": " << "Pegel = " << ausgaenge.at(i)->getPegel() << std::endl;
+		}
 	}
 
 	virtual void update() = 0;
-	friend void test2(Baustein* b);
+	friend void test(Baustein* b);
 };
