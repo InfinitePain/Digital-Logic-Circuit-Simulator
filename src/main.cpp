@@ -8,26 +8,47 @@
  ============================================================================
  */
 
-#include <iostream>
-#include "schnittstelle.h"
-#include "baustein.h"
-#include "oder2.h"
-#include "und2.h"
-#include "xor2.h"
-#include "schaltung.h"
 #include "halbaddierer.h"
 #include "volladdierer.h"
 
-void test2(Baustein* b) {
-	// code
+void test(Baustein* b) {
+	int numInputs = b->eingaenge.size();
+	int numCombinations = 1 << numInputs;
+
+	for (int i = 0; i < numCombinations; i++) {
+		for (int j = 0; j < numInputs; j++) {
+			int pegel = (i & (1 << j)) ? Schnittstelle::HIGH : Schnittstelle::LOW;
+			b->eingaenge.at(j)->setPegel(pegel);
+		}
+
+		b->update();
+		b->print();
+		std::cout << std::endl;
+	}
 }
 
 int main() {
-	// Initialize Schnittstelle, Baustein, Oder2, Und2, Xor2, Schaltung, Halbaddierer, and Volladdierer objects here
+	int Anzahl_Schnittstellen = 5;
+	std::vector<Schnittstelle*> Schnittstellen;
+	for (int i = 0; i < Anzahl_Schnittstellen; i++) {
+		Schnittstellen.push_back(new Schnittstelle());
+	}
 
-	// Add your logic to connect objects, perform operations, and print results
+	Oder2* o2 = new Oder2(Schnittstellen.at(0), Schnittstellen.at(1), Schnittstellen.at(2));
+	test(o2);
 
-	// Don't forget to clean up any allocated memory
+	Halbaddierer* ha = new Halbaddierer(Schnittstellen.at(0), Schnittstellen.at(1), Schnittstellen.at(2), Schnittstellen.at(3));
+	test(ha);
+
+	Volladdierer* va = new Volladdierer(Schnittstellen.at(0), Schnittstellen.at(1), Schnittstellen.at(2), Schnittstellen.at(3), Schnittstellen.at(4));
+	test(va);
+
+	for (int i = 0; i < Anzahl_Schnittstellen; i++) {
+		delete Schnittstellen.at(i);
+	}
+
+	delete ha;
+	delete va;
 
 	return 0;
 }
