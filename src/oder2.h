@@ -28,8 +28,11 @@ public:
 		if (e0Pegel == Schnittstelle::UNDEFINED || e1Pegel == Schnittstelle::UNDEFINED) {
 			ausgaenge.at(0)->setPegel(Schnittstelle::UNDEFINED);
 		}
+		else if (e0Pegel == Schnittstelle::HIGH || e1Pegel == Schnittstelle::HIGH) {
+			ausgaenge.at(0)->setPegel(Schnittstelle::HIGH);
+		}
 		else {
-			ausgaenge.at(0)->setPegel(e0Pegel | e1Pegel);
+			ausgaenge.at(0)->setPegel(Schnittstelle::LOW);
 		}
 	}
 };
