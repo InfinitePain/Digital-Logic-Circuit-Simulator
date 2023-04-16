@@ -15,9 +15,15 @@ void test(Baustein* b) {
 	int numInputs = b->eingaenge.size();
 	int numCombinations = 1 << numInputs;
 
-	for (int i = 0; i < numCombinations; i++) {
+	for (int i = 0; i < numCombinations * 2; i++) {
 		for (int j = 0; j < numInputs; j++) {
-			int pegel = (i & (1 << j)) ? Schnittstelle::HIGH : Schnittstelle::LOW;
+			int pegel;
+			if (i % 2 == 0) {
+				pegel = (i / 2 & (1 << j)) ? Schnittstelle::HIGH : Schnittstelle::LOW;
+			}
+			else {
+				pegel = Schnittstelle::UNDEFINED;
+			}
 			b->eingaenge.at(j)->setPegel(pegel);
 		}
 
