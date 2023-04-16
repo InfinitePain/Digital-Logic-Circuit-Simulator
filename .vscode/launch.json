@@ -30,7 +30,7 @@
             "name": "C/C++: g++ build and debug main.cpp for Linux",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\bin\\Digital Logic Circuit Simulator.exe",
+            "program": "${workspaceFolder}/bin/Digital Logic Circuit Simulator",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
