@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef SCHNITTSTELLE_H_
+#define SCHNITTSTELLE_H_
 
 class Schnittstelle {
 private:
@@ -32,3 +33,5 @@ public:
 		return false;
 	}
 };
+
+#endif /*SCHNITTSTELLE_H_*/

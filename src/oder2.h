@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef ODER2_H_
+#define ODER2_H_
 
 #include "baustein.h"
 #include <vector>
@@ -36,3 +37,5 @@ public:
 		}
 	}
 };
+
+#endif /*ODER2_H_*/

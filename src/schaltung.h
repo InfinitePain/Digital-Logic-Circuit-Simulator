@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef SCHALTUNG_H_
+#define SCHALTUNG_H_
 
 #include "schnittstelle.h"
 #include "baustein.h"
@@ -27,3 +28,5 @@ public:
 		}
 	}
 };
+
+#endif /*SCHALTUNG_H_*/

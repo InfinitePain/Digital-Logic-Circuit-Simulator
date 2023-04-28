@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef BAUSTEIN_H_
+#define BAUSTEIN_H_
 
 #include "schnittstelle.h"
 #include <iostream>
@@ -42,3 +43,5 @@ public:
 	virtual void update() = 0;
 	friend void test(Baustein* b);
 };
+
+#endif /*BAUSTEIN_H_*/

@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef UND2_H_
+#define UND2_H_
 
 #include "baustein.h"
 #include <vector>
@@ -36,3 +37,5 @@ public:
 		}
 	}
 };
+
+#endif /*UND2_H_*/

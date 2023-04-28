@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef XOR2_H_
+#define XOR2_H_
 
 #include "baustein.h"
 #include <vector>
@@ -36,3 +37,5 @@ public:
 		}
 	}
 };
+
+#endif /*XOR2_H_*/

@@ -7,7 +7,8 @@
  ============================================================================
  */
 
-#pragma once
+#ifndef VOLLADDIERER_H_
+#define VOLLADDIERER_H_
 
 #include "schaltung.h"
 #include "oder2.h"
@@ -46,3 +47,5 @@ public:
 		bausteine.at(2)->update();
 	}
 };
+
+#endif /*VOLLADDIERER_H_*/

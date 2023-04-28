@@ -7,8 +7,8 @@
  ============================================================================
  */
 
-#pragma once
-
+#ifndef HALBADDIERER_H_
+#define HALBADDIERER_H_
 
 #include "schaltung.h"
 #include "xor2.h"
@@ -37,3 +37,5 @@ public:
 		}
 	}
 };
+
+#endif /*HALBADDIERER_H_*/
