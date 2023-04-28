@@ -12,6 +12,7 @@ The project consists of several files:
 - `schaltung.h`: Contains the definition of the circuit class and its associated functions.
 - `halbaddierer.h`: Contains the definition of the half adder class and its associated functions.
 - `volladdierer.h`: Contains the definition of the full adder class and its associated functions.
+- `utilities.h`: Contains the definition of utility functions for the project.
 - `main.cpp`: Contains the test functions to be implemented and called in the `main()` function.
     
 ## Learning Objectives
@@ -41,11 +42,18 @@ To compile and run the program, follow these steps:
     g++ -o digital_logic_circuit_simulator main.cpp
     ```
     
-4.  Run the compiled program with:
+4.  Run the compiled program in 8-bit adder mode with:
+
     ```
     ./digital_logic_circuit_simulator
     ```
 
+	Or, to run the program with tests, use the following command:
+
+    ```
+    ./digital_logic_circuit_simulator test
+    ```
+	
 ## Contributing
 
 Contributions to this project are welcome. If you have any suggestions for improvements or additional features, please feel free to open an issue or submit a pull request on the project's GitHub repository.
